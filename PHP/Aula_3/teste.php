@@ -31,7 +31,8 @@
     echo saudacao("Ulf") . "<br>"; 
     echo date("d/m/y") . "<br>";
     echo date("h:i:s") . "<br>";
-    echo $conteudo;
+    echo $conteudo . "<br>";
+    echo situacao(8);
 
     echo "<br><img src='images.jpg'>";
 ?>

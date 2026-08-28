@@ -8,4 +8,8 @@
     function saudacao($nome, $titulo = "Sr(a).") {
         return "Olá $titulo $nome";
     }
+
+    function situacao($media) {
+        return $media >= 7 ? "Aprovado" : "Reprovado";
+    }
 ?>
