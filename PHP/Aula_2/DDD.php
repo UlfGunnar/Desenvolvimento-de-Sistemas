@@ -12,6 +12,11 @@
     ];
     $Valor_DDD = 11;
     $Valor_Destination = array_search($Valor_DDD, $DDD);
-
-    echo "$Destination[$Valor_Destination]";
+    
+    if ($Valor_Destination == NULL) {
+        echo "DDD não cadastrado";
+    }
+    else {
+        echo "$Destination[$Valor_Destination]";
+    }
 ?>
