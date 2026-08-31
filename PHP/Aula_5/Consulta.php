@@ -1,4 +1,5 @@
 <?php
+    //SEM FILTRO
     try {
         //DSN diferente de DNS
         $pdo = new PDO("mysql:host=localhost;dbname=cadastro;charset=utf8", "root", "");
@@ -20,4 +21,30 @@
 
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
-}
+    };
+
+    echo "<br>";
+    echo "O aluno do ID 3: ";
+    //COM FILTRO
+    try {
+        $pdo = new PDO("mysql:host=localhost;dbname=cadastro;charset=utf8", "root", "");
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $id = 3; 
+
+        $sql = "SELECT nome, email FROM usuario WHERE id = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$id]);
+
+        $aluno = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($aluno) {
+            echo "Nome: " . $aluno['nome'] . " | Email: " . $aluno['email'];
+        } else {
+            echo "Nenhum usuário encontrado com esse ID.";
+        }
+
+    } catch (PDOException $e) {
+        echo "Erro: " . $e->getMessage();
+    }
+?>
