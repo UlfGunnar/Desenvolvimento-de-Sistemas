@@ -1,11 +1,11 @@
 <?php
     //SEM FILTRO
     try {
-        //DSN diferente de DNS
-        $pdo = new PDO("mysql:host=localhost;dbname=cadastro;charset=utf8", "root", "");
+        //DSN (Data Source Name)
+        $pdo = new PDO("mysql:host=localhost;port=3407;dbname=cadastro;charset=utf8", "root", "root");
 
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        //seta o que mudar e depois o que mudar
+        //seta o que mudar e depois o que mudar 
 
         $sql = "SELECT nome, email FROM usuario";
         $stmt = $pdo->query($sql);
@@ -25,9 +25,10 @@
 
     echo "<br>";
     echo "O aluno do ID 3: ";
+
     //COM FILTRO
     try {
-        $pdo = new PDO("mysql:host=localhost;dbname=cadastro;charset=utf8", "root", "");
+        $pdo = new PDO("mysql:host=localhost;port=3407;dbname=cadastro;charset=utf8", "root", "root");
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $id = 3; 
