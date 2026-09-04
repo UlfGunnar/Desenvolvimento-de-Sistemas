@@ -13,7 +13,8 @@
             $sql = "CREATE TABLE IF NOT EXISTS alunos ( 
                         id INT AUTO_INCREMENT PRIMARY KEY, 
                         nome VARCHAR(100) NOT NULL, 
-                        nota DECIMAL(4,2) NOT NULL 
+                        media DECIMAL(4,2) NOT NULL,
+                        situacao varchar(15) NOT NULL 
                     );";
             $pdo -> exec($sql);
 

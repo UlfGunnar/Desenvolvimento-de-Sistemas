@@ -1,0 +1,15 @@
+1- Fazer a conexão entre o PHP e o BD;
+
+2- A localização do driver, contendo o endereço do DB;
+
+3- O prepare() ele isola o comando SQL e o execute() executa o comando;
+
+4- Para facilitar alterações;
+
+5- Para evitar SQL injection;
+
+6- Ele vem de forma array associativa;
+
+7- array associativo;
+
+8- Para salvar os dados brutos no BD e apenas gerar o dado derivado da media para ser feita no PHP;
