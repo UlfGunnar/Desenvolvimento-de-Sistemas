@@ -1,0 +1,68 @@
+2.1 - CREATE DATABASE IF NOT EXISTS biblioteca
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
+    USE leitor;
+
+2.2 -  CREATE TABLE categorias (
+        id INT primary key auto_increment NOTNULL,
+        nome VARCHAR(100) NOT NULL UNIQUE
+    );
+
+2.3 - CREATE TABLE leitores (
+        id INT auto_increment PRIMARY KEY,
+        nome VARCHAR(100) NOT NULL,
+        email VARCHAR(100) NOT NULL UNIQUE,
+        ativo VARCHAR(10) NOT NULL DEFAULT 'Ativo',
+        criado_em TIMESTAMP NOT NULL DEFAULT now()
+    );
+
+2.4 - CREATE TABLE livros (
+        id INT primary key auto_increment PRIMARY KEY,
+        categoria_id INT NOT NULL,
+        titulo VARCHAR(100) NOT NULL,
+        autor VARCHAR(100) NOT NULL,
+        isbn VARCHAR(13) NOT NULL UNIQUE,
+        ano_publicacao Date NOT NULL,
+        disponivel varchar(15) NOT NULL DEFAULT 'disponivel',
+
+        CONSTRAINT fk_categoria_id
+            FOREIGN KEY (categoria_id)
+            REFERENCES categorias(id)
+            ON UPDATE CASCADE
+            ON DELETE CASCADE,
+            
+        CONSTRAINT chk_livro_ano
+            CHECK (ano_publicacao BETWEEN 1900 AND YEAR(CURDATE()))
+    );
+
+2.5 - CREATE TABLE emprestimos (
+        id INT primary key auto_increment PRIMARY KEY,
+        leitor_id INT NOT NULL,
+        livro_id INT NOT NULL,
+        data_emprestimo Date NOT NULL,
+        data_prevista DATE NOT NULL,
+        data_devolucao DATE NOT NULL,
+        status VARCHAR(20) NOT NULL DEFAULT 'Emprestado',
+
+        CONSTRAINT fk_leitor_id
+            FOREIGN KEY (leitor_id)
+            REFERENCES leitores(id)
+            ON UPDATE CASCADE
+            ON DELETE CASCADE,
+
+        CONSTRAINT fk_livro_id
+            FOREIGN KEY (livro_id)
+            REFERENCES livros(id)
+            ON UPDATE CASCADE
+            ON DELETE CASCADE,
+
+        CONSTRAINT chk_ativo
+            CHECK (status IN ('Emprestado', 'Devolvido'))
+);
+
+2.6 - CREATE INDEX idx_emprestimo_data_emprestimo
+      ON emprestimos (data_emprestimo);
+
+      CREATE INDEX fk_livros_isbn
+      ON livros (isbn);
+
