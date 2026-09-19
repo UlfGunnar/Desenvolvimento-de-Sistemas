@@ -8,12 +8,25 @@
 </head>
 <body>
     <header>
-        <img src="imagens/Logo.png" alt="Logo da Dogtor" class="logo">
+        <img src="image/Logo.png" alt="Logo da Dogtor" class="logo">
         <p><strong>Dogtor</strong></p>
-        <nav>
-            <a href="index.html" class="active"><em>Início</em></a>
-            <a href="servicos.html" class="active"><em>Serviços</em></a>
-            <a href="contato.html" class="active"><em>Contato</em></a>
+
+        <button class="hamburguer" id="btnMenu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuPrincipal">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="menuPrincipal">
+            <a href="index.html"><em>Início</em></a>
+            <a href="Pages/servicos.html"><em>Serviços</em></a>
+            <a href="Pages/contato.html" ><em>Contato</em></a>
+            <a href="Pages/FAQ.html"><em>FAQ</em></a>
+            <a href="Pages/Planos_precos.html"><em>Planos</em></a>
+            <a href="Pages/Depoimento.html"><em>Depoimentos</em></a>
+            <a href="Pages/Sobre_nos.html"><em>Sobre</em></a>
+            <a href="Pages/Equipe.html"><em>Equipe</em></a>
+            <a href="Pages/Projetos.html"><em>Projetos</em></a>
         </nav>
     </header>
     <main>
@@ -22,9 +35,11 @@
                 <h1>Dogtor Veterinária</h1>
                 <p>No Dogtor, cuidamos da saúde e do bem-estar do seu melhor amigo com toda a dedicação que ele merece. Contamos com uma equipe experiente e apaixonada por animais, pronta para oferecer atendimento humanizado, diagnósticos precisos e tratamentos eficazes para cães, gatos e outros pets.</p>
              </div>
-            <img src="imagens/gato_fucking_green.png" alt="fato do gato fucking green" class="gato">
+            <img src="image/gato_fucking_green.png" alt="fato do gato fucking green" class="gato">
         </div>
     </main>
     <footer>Site feito por Ulf Gunnar</footer>
+
+    <script src="menu.js"></script>
 </body>
 </html>
