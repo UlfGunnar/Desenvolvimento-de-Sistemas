@@ -1,0 +1,1 @@
+Serve para enviar dados para o servidor, pelo body da página e não pega URL como no metódo GET.
