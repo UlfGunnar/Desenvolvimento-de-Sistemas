@@ -22,26 +22,16 @@
             <label>Curso</label>
             <input name="curso" type="text" required>
 
+            <label>Data de Nascimento</label>
+            <input type="date" name="data_nascimento" required>
+
+            <label>Cidade</label>
+            <input type="text" name="cidade" required>
+
+            <label>Periodo</label>
+            <input type="text" name="periodo">
+
             <button type="submit">Salvar</button>
-        </form>
-    </section>
-
-    <section>
-        <h2>Atualizar</h2>
-        <form action="atualizar.php" method="POST">
-            <label>ID</label>
-            <input name="id" type="number" min="1" required>
-
-            <label>Nome</label>
-            <input name="nome" type="text" required>
-
-            <label>E-mail</label>
-            <input name="email" type="email" required>
-
-            <label>Curso</label>
-            <input name="curso" type="text" required>
-
-            <button type="submit">Atualizar</button>
         </form>
     </section>
 
@@ -60,6 +50,9 @@
         <form action="consultar.php" method="GET">
             <label>ID (opcional)</label>
             <input name="id" type="number" min="1">
+
+            <label>Nome</label>
+            <input type="text" name="nome">
 
             <button type="submit">Consultar</button>
         </form>

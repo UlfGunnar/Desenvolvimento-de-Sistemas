@@ -1,10 +1,10 @@
 <?php 
     require "conexao.php";
 
-    if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    if ($_SERVER["REQUEST_METHOD"] !== "GET") {
         exit("Método inválido");
     }
-    $id = filter_input(INPUT_POST, "id", FILTER_VALIDATE_INT);
+    $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
 
     if(!$id) {
         exit("Informe um ID válido");

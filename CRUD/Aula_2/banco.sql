@@ -12,5 +12,5 @@ CREATE TABLE IF NOT EXISTS alunos (
   data_nascimento Date NOT NULL,
   cidade VARCHAR(100) NOT NULL,
   periodo Text NOT NULL,
-  criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 );

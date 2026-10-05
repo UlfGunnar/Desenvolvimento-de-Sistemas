@@ -1,10 +1,9 @@
 <?php 
-    function criar_conexao() {
         $host = "localhost";
-        $porta = 3407;
+        $porta = 3306;
         $banco = "escola_formulario";
         $usuario = "root";
-        $senha = "root";
+        $senha = "";
     
         try {
             $pdo = new PDO("mysql:host=$host;port=$porta;dbname=$banco;charset=utf8mb4", $usuario, $senha);
@@ -14,5 +13,4 @@
         } catch (PDOException $erro) {
             exit("Erro ao conectar ao banco de dados: " . $erro->getMessage());
         }
-    }
 ?> 
