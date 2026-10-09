@@ -43,7 +43,7 @@
                     <?php foreach ($anotacoes as $anotacao): ?>
                         <tr>
                             <td><?= htmlspecialchars($anotacao["id_anotacao"]) ?></td>
-                            <td><?= htmlspecialchars($anotacao["titulo"]) ?></td>
+                            <td>    </td>
                             <td>
                                 <a href="HTML/Vizualizar.php?id=<?= (int) $anotacao["id_anotacao"] ?>">🔍</a>
                             </td>

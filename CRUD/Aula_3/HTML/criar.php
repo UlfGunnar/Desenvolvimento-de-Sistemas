@@ -27,6 +27,7 @@
                     placeholder="Digite o título..."
                     class="titulo"
                     maxlength=100
+                    required
                 >
                 <textarea
                     id="conteudo"

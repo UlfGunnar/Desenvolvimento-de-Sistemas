@@ -48,6 +48,7 @@
                     placeholder="Digite o título..."
                     class="titulo"
                     maxlength=100
+                    required
                     Value="<?= htmlspecialchars($anotacao["titulo"]) ?>"
                 >
                 <textarea
