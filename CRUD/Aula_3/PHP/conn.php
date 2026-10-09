@@ -1,9 +1,9 @@
 <?php 
     function criar_conexao() {
         $host = "localhost";
-        $porta = 3407;
+        $porta = 3306;
         $usuario = "root";
-        $senha = "root";
+        $senha = "";
 
         try {
             $pdo = new PDO(

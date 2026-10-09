@@ -1,0 +1,853 @@
+header {
+    font-family: Arial, sans-serif;
+    background: #032a66;
+    margin: 0;
+    padding: 24px;
+}
+
+header >h1 {
+   color: #ffffff;
+}
+
+footer >h3 {
+    color: #ffffff;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color:#032a66;
+    text-align: center;
+    padding: 10px;
+}
+
+button.criar {
+    width: 10%;
+    position: fixed; 
+    bottom: 100px;        
+    right: 530px;   
+    padding: 10px;
+}
+
+main a img {
+    width: 35px;
+    height: auto;
+    position: fixed;
+    top: 120px;
+    left: 20px;
+}
+
+
+.bloco {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.titulo {
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-bottom: 2px solid #032a66;
+    outline: none;
+}
+
+.conteudo {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    padding: 15px;
+    height: 400px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: vertical;
+    outline-color: #032a66;
+}
+
+.voltar img {
+    width: 35px;
+    height: auto;
+    position: fixed;
+    top: 130px;
+    left: 20px;
+}
+
+.salvar {
+    top: 120px;
+    left: 20px;
+}
+
+.lista-notas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.cartao-nota {
+    background-color: #f4f7fc;
+    border: 1px solid #d5deed;
+    border-left: 5px solid #032a66;
+    border-radius: 10px;
+    padding: 18px;
+    min-height: 120px;
+    overflow-wrap: anywhere;
+    box-shadow: 0 3px 8px #00000012;
+}
+
+.cartao-nota h3 {
+    font-family: Arial, sans-serif;
+    color: #032a66;
+    margin-top: 0;
+}
+
+.cartao-nota p {
+    font-family: Arial, sans-serif;
+    color: #333333;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+#salvarNota {
+    background-color: #032a66;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    align-self: flex-start;
+}
+
+#salvarNota:hover {
+    background-color: #064099;
+}
+.acoes-nota {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.acoes-nota button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.botao-editar {
+    background-color: #032a66;
+    color: white;
+}
+
+.botao-editar:hover {
+    background-color: #064099;
+}
+
+.botao-excluir {
+    background-color: #ffe5e5;
+    color: #b00020;
+}
+
+.botao-excluir:hover {
+    background-color: #ffcaca;
+}
+
+.cartao-nota {
+    background-color: #f4f7fc;
+    border: 1px solid #d5deed;
+    border-left: 5px solid #032a66;
+    border-radius: 10px;
+    padding: 18px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    box-shadow: 0 3px 8px #00000012;
+}
+
+.cartao-nota h3 {
+    font-family: Arial, sans-serif;
+    color: #032a66;
+    margin-top: 0;
+}
+
+.cartao-nota p {
+    font-family: Arial, sans-serif;
+    color: #333;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+
+/* ==========================================================================
+   >>> A PARTIR DESTE COMENTARIO, TUDO QUE ESTA ABAIXO FOI VIBECODADO <<<
+   (gerado por IA - Claude)
+
+   - Tudo ACIMA deste comentario e o CSS original e NAO foi alterado.
+   - Estilo: app de bloco de notas de celular, nas cores azuis do projeto.
+   - Responsivo (mobile-first): se adapta quando a janela do navegador
+     for diminuida. Nenhum HTML/PHP foi modificado, so CSS.
+   ========================================================================== */
+
+
+/* ---------- Variaveis (baseadas nos azuis que ja existiam no CSS) ---------- */
+:root {
+    --azul-escuro: #032a66;
+    --azul-medio: #064099;
+    --azul-texto-suave: #3a5ea8;
+    --azul-claro: #e3ecfb;
+    --azul-linha: #c3d3f0;
+    --azul-fundo-card: #f4f7fc;
+    --azul-borda: #d5deed;
+    --fundo-pagina: #eaf0fb;
+    --vermelho-fundo: #ffe5e5;
+    --vermelho-borda: #ffcaca;
+    --vermelho-texto: #b00020;
+    --sombra: 0 3px 10px rgba(3, 42, 102, 0.08);
+    --sombra-forte: 0 10px 24px rgba(3, 42, 102, 0.16);
+    --largura-lista: 1100px;
+    --largura-editor: 760px;
+    --gutter: 16px;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --gutter: 24px;
+    }
+}
+
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* o original fixa height:100%, o que impede o cabecalho de ficar "grudado" */
+html,
+body {
+    height: auto;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1d2b4a;
+    background: linear-gradient(180deg, #eef3fc 0%, var(--fundo-pagina) 100%);
+}
+
+::selection {
+    background: var(--azul-linha);
+    color: var(--azul-escuro);
+}
+
+
+/* ---------- Cabecalho (barra do app) ---------- */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 14px max(var(--gutter), calc((100% - var(--largura-lista)) / 2));
+    font-family: inherit;
+    background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-medio) 100%);
+    box-shadow: 0 4px 16px rgba(3, 42, 102, 0.28);
+}
+
+header > h1 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    font-size: clamp(1.2rem, 4.6vw, 1.6rem);
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+}
+
+/* iconezinho de bloco de notas desenhado so com CSS */
+header > h1::before {
+    content: "";
+    flex: none;
+    width: 26px;
+    height: 32px;
+    border-radius: 5px;
+    background:
+        linear-gradient(#8fb0ee, #8fb0ee) 0 0 / 100% 8px no-repeat,
+        linear-gradient(var(--azul-linha), var(--azul-linha)) 5px 14px / 16px 2px no-repeat,
+        linear-gradient(var(--azul-linha), var(--azul-linha)) 5px 20px / 16px 2px no-repeat,
+        linear-gradient(var(--azul-linha), var(--azul-linha)) 5px 26px / 10px 2px no-repeat,
+        #ffffff;
+}
+
+
+/* ---------- Rodape ---------- */
+footer {
+    padding: 16px 20px;
+    font-family: inherit;
+}
+
+footer > h3 {
+    margin: 0;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+
+/* ==========================================================================
+   TELA INICIAL (index.php) - lista de notas
+   A <table> do HTML vira uma grade de "cartoes" de nota, como em app de celular
+   ========================================================================== */
+.topo-notas {
+    width: min(100% - 2 * var(--gutter), var(--largura-lista));
+    margin: 0 auto;
+    padding: 28px 0 100px; /* espaco para o botao flutuante nao cobrir o ultimo cartao */
+}
+
+.topo-notas h2 {
+    margin: 0 0 18px;
+    font-size: clamp(1.6rem, 6vw, 2.1rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--azul-escuro);
+}
+
+.topo-notas table {
+    display: block;
+    width: 100%;
+    border-spacing: 0;
+}
+
+/* cabecalho da tabela: escondido visualmente, mas continua acessivel */
+.topo-notas thead {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+.topo-notas tbody {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+    gap: 16px;
+}
+
+/* mensagem quando ainda nao existe nenhuma nota */
+.topo-notas tbody:not(:has(tr))::before {
+    content: "Nenhuma nota por aqui ainda. Toque em +\0000a0Criar\0000a0nota para iniciar.";
+    grid-column: 1 / -1;
+    padding: 36px 20px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--azul-texto-suave);
+    background: var(--azul-fundo-card);
+    border: 2px dashed var(--azul-linha);
+    border-radius: 18px;
+}
+
+/* cada linha vira um cartao */
+.topo-notas tbody tr {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "num    acao"
+        "titulo titulo";
+    gap: 8px 12px;
+    min-height: 118px;
+    padding: 14px 14px 16px 18px;
+    background: linear-gradient(180deg, #ffffff 0%, var(--azul-fundo-card) 100%);
+    border: 1px solid var(--azul-borda);
+    border-left: 5px solid var(--azul-escuro);
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-left-color 0.15s ease;
+    animation: surgir 0.3s ease both;
+}
+
+.topo-notas tbody tr:hover {
+    transform: translateY(-3px);
+    border-left-color: var(--azul-medio);
+    box-shadow: var(--sombra-forte);
+}
+
+.topo-notas tbody tr:active {
+    transform: scale(0.98);
+}
+
+.topo-notas tbody tr:has(a:focus-visible) {
+    outline: 3px solid var(--azul-medio);
+    outline-offset: 2px;
+}
+
+.topo-notas td {
+    display: block;
+    padding: 0;
+    min-width: 0;
+}
+
+/* 1a coluna: numero da nota */
+.topo-notas td:nth-child(1) {
+    grid-area: num;
+    align-self: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--azul-texto-suave);
+}
+
+.topo-notas td:nth-child(1)::before {
+    content: "Nota n\0000ba\0000a0";
+}
+
+/* 2a coluna: titulo */
+.topo-notas td:nth-child(2) {
+    grid-area: titulo;
+    align-self: start;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--azul-escuro);
+    overflow-wrap: anywhere;
+}
+
+/* 3a coluna: botao de abrir (o cartao inteiro fica clicavel) */
+.topo-notas td:nth-child(3) {
+    grid-area: acao;
+    align-self: center;
+}
+
+.topo-notas td:nth-child(3) a {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    text-decoration: none;
+    background: var(--azul-claro);
+    border: 1px solid var(--azul-borda);
+    border-radius: 50%;
+    transition: background-color 0.15s ease;
+}
+
+.topo-notas td:nth-child(3) a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+}
+
+.topo-notas tbody tr:hover td:nth-child(3) a {
+    background: var(--azul-linha);
+}
+
+.topo-notas td:nth-child(3) a:focus-visible {
+    outline: 3px solid var(--azul-medio);
+    outline-offset: 3px;
+}
+
+/* botao flutuante "+ Criar nota" (FAB de app de celular) */
+main button.criar {
+    position: fixed;
+    top: auto;
+    left: auto;
+    right: max(18px, calc((100vw - var(--largura-lista)) / 2));
+    bottom: 76px; /* fica acima do rodape azul, que tem cor parecida */
+    z-index: 60;
+    width: auto;
+    padding: 15px 24px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-medio) 100%);
+    border: 0;
+    border-radius: 999px;
+    box-shadow: 0 10px 24px rgba(3, 42, 102, 0.35);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+main button.criar:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.15);
+    box-shadow: 0 14px 30px rgba(3, 42, 102, 0.4);
+}
+
+main button.criar:active {
+    transform: scale(0.96);
+}
+
+main button.criar:focus-visible {
+    outline: 3px solid var(--azul-linha);
+    outline-offset: 3px;
+}
+
+/* area onde os cartoes ".cartao-nota" aparecem (se forem usados depois) */
+.lista-notas {
+    width: min(100% - 2 * var(--gutter), var(--largura-lista));
+    margin: 0 auto;
+    padding: 0;
+}
+
+.cartao-nota {
+    background: linear-gradient(180deg, #ffffff 0%, var(--azul-fundo-card) 100%);
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+}
+
+
+/* ==========================================================================
+   TELAS DE CRIAR / EDITAR (criar.php e Vizualizar.php)
+   A area de escrita vira uma "folha de caderno" com linhas azuis
+   ========================================================================== */
+
+/* botao voltar: redondo, azul, logo abaixo do cabecalho (sai do position: fixed) */
+main > a.voltar {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    margin: 18px 0 0 max(var(--gutter), calc((100% - var(--largura-editor)) / 2));
+    background: var(--azul-escuro);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(3, 42, 102, 0.3);
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+main > a.voltar:hover {
+    background: var(--azul-medio);
+    transform: translateX(-2px);
+}
+
+main > a.voltar:focus-visible {
+    outline: 3px solid var(--azul-medio);
+    outline-offset: 3px;
+}
+
+/* o PNG original e preto: aqui ele e invertido para ficar branco sobre o azul */
+main a.voltar img {
+    position: static;
+    top: auto;
+    left: auto;
+    display: block;
+    width: 34px;
+    height: 34px;
+    filter: invert(1);
+}
+
+/* a folha */
+.bloco {
+    width: min(100% - 2 * var(--gutter), var(--largura-editor));
+    max-width: none;
+    margin: 16px auto 40px;
+    gap: 0;
+    background: #ffffff;
+    border: 1px solid var(--azul-borda);
+    border-top: 6px solid var(--azul-medio);
+    border-radius: 20px;
+    box-shadow: 0 12px 32px rgba(3, 42, 102, 0.12);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+}
+
+.bloco:focus-within {
+    box-shadow: 0 12px 32px rgba(3, 42, 102, 0.18), 0 0 0 3px rgba(6, 64, 153, 0.22);
+}
+
+.bloco form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* titulo da nota */
+.titulo {
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 22px 24px 14px;
+    font-family: inherit;
+    font-size: clamp(1.2rem, 5vw, 1.9rem);
+    font-weight: 800;
+    text-overflow: ellipsis;
+    color: var(--azul-escuro);
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #e3eaf8;
+    border-radius: 0;
+}
+
+.titulo:focus {
+    border-bottom-color: var(--azul-medio);
+}
+
+.titulo::placeholder,
+.conteudo::placeholder {
+    color: #8ea6d3;
+    opacity: 1;
+}
+
+/* texto da nota: papel pautado com linha de margem */
+.conteudo {
+    --margem: 56px;
+    display: block;
+    flex: 0 0 100%;
+    width: 100%;
+    height: clamp(280px, 56vh, 640px);
+    padding: 8px 22px 24px calc(var(--margem) + 14px);
+    font-family: inherit;
+    font-size: 1.05rem;
+    line-height: 32px;
+    color: #1d2b4a;
+    background-color: #ffffff;
+    background-image:
+        linear-gradient(to right,
+            transparent calc(var(--margem) - 1px),
+            var(--azul-linha) calc(var(--margem) - 1px),
+            var(--azul-linha) var(--margem),
+            transparent var(--margem)),
+        linear-gradient(#ffffff, #ffffff),
+        linear-gradient(to bottom, transparent 31px, #e3eaf8 31px);
+    background-size: 100% 100%, 100% 8px, 100% 32px;
+    background-position: 0 0, 0 0, 0 8px;
+    background-repeat: no-repeat, no-repeat, repeat-y;
+    background-attachment: local, local, local;
+    border: 0;
+    border-radius: 0;
+    outline: none;
+    resize: vertical;
+}
+
+/* botao salvar / atualizar */
+#salvarNota {
+    flex: 1 1 160px;
+    align-self: stretch;
+    margin: 18px 0 22px 20px;
+    padding: 14px 24px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-medio) 100%);
+    border: 0;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(3, 42, 102, 0.28);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+#salvarNota:hover {
+    background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-medio) 100%);
+    filter: brightness(1.2);
+    box-shadow: 0 10px 22px rgba(3, 42, 102, 0.34);
+}
+
+#salvarNota:active {
+    transform: scale(0.97);
+}
+
+#salvarNota:focus-visible {
+    outline: 3px solid var(--azul-linha);
+    outline-offset: 2px;
+}
+
+#salvarNota:last-child {
+    margin-right: 20px;
+}
+
+/* link "Excluir" (so existe na tela de editar): botao vermelho suave */
+.bloco form a {
+    flex: 0 0 auto;
+    align-self: stretch;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 18px 20px 22px 20px;
+    padding: 14px 22px;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+    color: var(--vermelho-texto);
+    background: var(--vermelho-fundo);
+    border: 1px solid var(--vermelho-borda);
+    border-radius: 14px;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.bloco form a:hover {
+    background: var(--vermelho-borda);
+}
+
+.bloco form a:active {
+    transform: scale(0.97);
+}
+
+.bloco form a:focus-visible {
+    outline: 3px solid var(--vermelho-texto);
+    outline-offset: 2px;
+}
+
+
+/* ==========================================================================
+   ANIMACAO
+   ========================================================================== */
+@keyframes surgir {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================================================
+   RESPONSIVO
+   ========================================================================== */
+
+/* telas medias e pequenas (janela do PC diminuida / tablet / celular) */
+@media (max-width: 900px) {
+    main button.criar {
+        right: 18px;
+    }
+}
+
+/* telas largas: botoes ficam com tamanho natural em vez de esticar */
+@media (min-width: 700px) {
+    #salvarNota {
+        flex: 0 0 auto;
+        min-width: 180px;
+    }
+}
+
+/* celulares */
+@media (max-width: 480px) {
+    :root {
+        --gutter: 12px;
+    }
+
+    header {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .topo-notas {
+        padding-top: 20px;
+    }
+
+    .topo-notas tbody {
+        gap: 12px;
+    }
+
+    .topo-notas tbody tr {
+        min-height: 104px;
+        padding: 14px 14px 12px 16px;
+    }
+
+    main button.criar {
+        right: 14px;
+        bottom: 80px;
+        padding: 14px 20px;
+    }
+
+    main > a.voltar {
+        margin-top: 14px;
+    }
+
+    .bloco {
+        margin-top: 12px;
+        border-radius: 16px;
+    }
+
+    .titulo {
+        padding: 18px 18px 12px;
+    }
+
+    .conteudo {
+        --margem: 36px;
+        padding-right: 16px;
+        padding-left: calc(var(--margem) + 12px);
+    }
+
+    #salvarNota,
+    .bloco form a {
+        margin-bottom: 18px;
+    }
+
+    #salvarNota {
+        margin-left: 16px;
+    }
+
+    #salvarNota:last-child {
+        margin-right: 16px;
+    }
+
+    .bloco form a {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
+
+/* celulares bem estreitos: botoes empilham, um por linha */
+@media (max-width: 360px) {
+    #salvarNota,
+    .bloco form a {
+        flex: 1 1 100%;
+    }
+
+    .bloco form a {
+        margin-top: 0;
+    }
+}
+
+/* respeita quem desativa animacoes no sistema */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}

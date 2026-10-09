@@ -13,7 +13,8 @@
     $anotacao = ($anotacao === "") ? null : $anotacao;
 
     if ($titulo === "") {
-        exit("Preencha o título");
+        Header("Location: ../HTML/criar.php?erro_criar=1");
+        exit;
     }
 
     $sql = "INSERT INTO Anotacao (titulo, anotacao)
@@ -25,5 +26,5 @@
         "anotacao"  => $anotacao
     ]);
 
-    echo "Anotacao salva!";
+    Header("Location: ../index.php?sucesso=1");
 ?>

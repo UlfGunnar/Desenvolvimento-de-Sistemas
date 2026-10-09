@@ -14,13 +14,15 @@
         exit("ID inválido");
     }
 
-    $sql = "DELETE FROM Anotacao WHERE id = :id";
+    $sql = "DELETE FROM Anotacao WHERE id_anotacao  = :id_anotacao";
     
     $stmt = $conn -> prepare($sql);
-    $stmt -> execute(["id" => $id]);
+    $stmt -> execute(["id_anotacao" => $id]);
     if ($stmt->rowCount() > 0) {
-        echo "Anotação removida!";
+        Header("Location: ../index.php?sucesso_deletar=1");
+        exit;
     } else {
-        echo "Anotação não encontrada";
+        Header("Location: ../index.php?erro_atualizar_id=1");
+        exit;
     }
 ?>
