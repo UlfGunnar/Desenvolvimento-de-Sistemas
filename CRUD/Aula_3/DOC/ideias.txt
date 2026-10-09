@@ -1,0 +1,12 @@
+Ideia: Bloco de notas WEB
+
+O usuário vai colocar o título da anotação e em outro input fará sua anotação.
+
+Em outra tela ele poderá selecionar seu bloco de notas, levando ele para a anotação. 
+
+Vizualizando o que foi anotado, será possível edita-lo ou deletar.
+
+Fluxograma:
+
+Criar anotação -> menu de anotações -> Vizualiar anotação
+

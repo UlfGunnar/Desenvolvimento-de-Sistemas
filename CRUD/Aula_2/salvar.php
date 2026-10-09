@@ -1,6 +1,8 @@
 <?php
 require "conexao.php";
 
+
+
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit("Método inválido.");
 }
