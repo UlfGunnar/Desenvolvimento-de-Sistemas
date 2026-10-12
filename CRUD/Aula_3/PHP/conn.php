@@ -1,5 +1,8 @@
 <?php 
-    function criar_conexao() {
+    require __DIR__ . '/../vendor/autoload.php';
+
+    function criar_conexao(): PDO {
+        /*
         $host = "localhost";
         $porta = 3407;
         $usuario = "root";
@@ -16,6 +19,33 @@
 
             return $pdo;
         } catch (PDOexception $erro) {
+            exit("[Falha DSN] Erro ao conectar com o banco de dados: " . $erro->getMessage());
+        }
+        */
+
+        static $env_carregado = false;
+
+        if (!$env_carregado) {
+            $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+            $dotenv -> load();
+            $dotenv -> required(['DB_HOST', 'DB_USER', 'DB_PASS']);
+            $dotenv -> required(['DB_HOST', 'DB_USER'])->notEmpty();
+            $env_carregado = true;
+        }
+
+        $host = $_ENV['DB_HOST'];
+        $porta = $_ENV['DB_PORT'] ?? 3306;
+        $usuario = $_ENV['DB_USER']; 
+        $senha = $_ENV['DB_PASS'];
+
+        $DSN = "mysql:host=$host;port=$porta;charset=utf8mb4";
+
+        try {
+            return new PDO($DSN, $usuario, $senha, [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            ]);
+        } catch (PDOException $erro) {
             exit("[Falha DSN] Erro ao conectar com o banco de dados: " . $erro->getMessage());
         }
     }

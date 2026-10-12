@@ -2,6 +2,7 @@
     require_once "PHP/conn.php";
 
     $conn = criar_conexao();
+    criar_estrutura($conn);
     usar_banco($conn);
 
     $sql = "SELECT id_anotacao, titulo FROM Anotacao;";
@@ -43,7 +44,7 @@
                     <?php foreach ($anotacoes as $anotacao): ?>
                         <tr>
                             <td><?= htmlspecialchars($anotacao["id_anotacao"]) ?></td>
-                            <td>    </td>
+                            <td><?= htmlspecialchars($anotacao["titulo"]) ?></td>
                             <td>
                                 <a href="HTML/Vizualizar.php?id=<?= (int) $anotacao["id_anotacao"] ?>">🔍</a>
                             </td>
