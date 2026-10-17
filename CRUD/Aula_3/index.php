@@ -2,7 +2,7 @@
     require_once "PHP/conn.php";
 
     $conn = criar_conexao();
-    criar_estrutura
+    criar_estrutura($conn);
     usar_banco($conn);
 
     $sql = "SELECT id_anotacao, titulo FROM Anotacao;";
