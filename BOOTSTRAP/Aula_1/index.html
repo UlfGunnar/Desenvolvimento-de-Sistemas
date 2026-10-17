@@ -1,0 +1,105 @@
+<!-- base -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exemplo Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Traz o CSS do Bootstrap -->
+   <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-color: rgba(163, 93, 163, 0.692);
+        }
+        p {
+            background-color: darkblue;
+            color: whitesmoke;
+            padding: 10px 0px 10px 10px;
+        }
+   </style>
+</head>
+<body>
+    <!-- Barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+        <a class="navbar-brand" href="#">Meu Site</a>
+  
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            ><a class="nav-link" href="#">Início</a></li>
+            ><a class="nav-link" href="#">Sobre</a></li>
+            ><a class="nav-link" href="#">Contato</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+    <p>Acima tem um header com um grupo de âncoras</p>
+    <p>O Bootstrap este nav cinza, que quando a tela está com uma largura pequena, os botões ficam dentro de um menú hamburguer</p>
+  
+
+    <div class="container py-4">
+        <div class="row">
+          <div class="col-md-6">
+            <h1>Olá, Bootstrap</h1>
+            <p>O Bootstrap serve para deixar melhor responsivo e trazer interações.</p>
+            <button class="btn btn-primary">Clique aqui</button>
+          </div>
+        </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <p>Acima tem um card, um bloco da tela que mostra alguns elementos agrupados</p>
+
+    <!-- grid -->
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-6 bg-light p-3">Coluna 1</div>
+            <div class="col-md-6 bg-secondary text-white p-3">Coluna 2</div>
+        </div>
+    </div>
+
+    <p>Acima mostra duas divs, onde cada uma está organizada como coluna, mas em telas pequenas ficam em linhas</p>
+
+    <!-- utilitários -->
+    <div class="d-flex justify-content-between align-items-center p-3 bg-light">
+        <span class="fw-bold">Título</span>
+        <button class="btn btn-primary">Ação</button>
+    </div>
+
+    <!-- card -->
+        <div class="card-body">
+            <h5 class="card-title">Meu card</h5>
+            <p class="card-text">Texto de exemplo dentro de um card Bootstrap.</p>
+            <a href="#" class="btn btn-success">Saiba mais</a>
+        </div>
+    </div>
+
+    <!-- formulários -->
+    <form>
+        <div class="mb-3">
+        <labelfor="email" class="form-label">E-mail</label>
+        <input type="email" id="email" class="form-control" placeholder="nome@exemplo.com">
+        </div>
+  
+        <div class="mb-3">
+        <label for="senha" class="form-label">Senha</label>
+        <input type="password" id="senha" class="form-control">
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+
+    <p>formulário aonde os inputs acompanham a largura da tela.</p>
+</body>
+</html>
+

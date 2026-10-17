@@ -43,6 +43,6 @@
     }
 
     function usar_banco($conn) {
-        $conn -> exec('USE Bloco_Notas');
+        $conn -> exec('USE Bloco_Notas;');
     }
 ?>

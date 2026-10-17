@@ -70,7 +70,7 @@
     </footer>
 
     <?php if (isset($_GET["erro_atualizar_titulo"])): ?>
-        <script>
+        <script> 
             alert("Título Obrigatório!");
             window.history.replaceState({}, "", "Vizualizar.php");
         </script>
