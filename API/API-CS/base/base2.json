@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "Nickname": "arT",
+        "Titulos": 6,
+        "Rating": 0.86,
+        "Team": "Legacy"
+    },
+    {
+        "id": 2,
+        "Nickname": "FalleN",
+        "Titulos": 19,
+        "Rating": 0.90,
+        "Team": "FURIA"
+    },
+    {
+        "id": 3,
+        "Nickname": "Insani",
+        "Titulos": null,
+        "Rating": 1.24,
+        "Team": "MIBR"
+    },
+    {
+        "id": 4,
+        "Nickname": "KSCERATO",
+        "Titulos": 9,
+        "Rating": 1.23,
+        "Team": "FURIA"
+    },
+    {
+        "id": 5,
+        "Nickname": "n1ssim",
+        "Titulos": 3,
+        "Rating": 1.02,
+        "Team": "Legacy"
+    },
+    {
+        "id": 6,
+        "Nickname": "nqz",
+        "Titulos": null,
+        "Rating": 1.08,
+        "Team": "MIBR"
+    },
+    {
+        "id": 7,
+        "Nickname": "skullz",
+        "Titulos": null,
+        "Rating": 0.86,
+        "Team": "Imperial"
+    },
+    {
+        "id": 8,
+        "Nickname": "yuurih",
+        "Titulos": 9,
+        "Rating": 0.97,
+        "Team": "FURIA"
+    },
+    {
+        "id": 9,
+        "Nickname": "ableJ",
+        "Titulos": null,
+        "Rating": 1.05,
+        "Team": null
+    },
+    {
+        "id": 10,
+        "Nickname": "fnx",
+        "Titulos": 4,
+        "Rating": 1.02,
+        "Team": null
+    }
+]
